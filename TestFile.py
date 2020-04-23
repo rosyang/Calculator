@@ -13,9 +13,6 @@ elif operator == "*":
     answer = num1 * num2
 elif operator == "/":
     answer = num1 / num2
-elif operator == "%":
-    answer = num1 % num2
 
 print("The answer is %s" % answer)
 # print("The answer is ", answer)
-# Hi
