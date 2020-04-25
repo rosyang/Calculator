@@ -36,33 +36,37 @@ def calc_simulation():
     user_calc = "Y"
 
     while user_calc == "Y":
-        mark = "A"
-        while mark == "A":
+        while True:
             try:
                 user_num_1 = input("Please enter the first number: ")
                 num_1 = convert_num(user_num_1)
-                mark = "B"
+                break
             except ValueError:
                 print("Not a valid number. Please try again.")
 
-        while mark == "B":
+        while True:
             user_operator = input("Please enter the operator (+, -, *, /): ")
-            if user_operator not in operatorsList:
-                print("Not a valid operator. Please try again.")
+            if user_operator in operatorsList:
+                break
             else:
-                mark = "C"
+                print("Not a valid operator. Please try again.")
 
-        while mark == "C":
+        while True:
             try:
                 user_num_2 = input("Please enter the second number: ")
                 num_2 = convert_num(user_num_2)
-                mark = "D"
+                break
             except ValueError:
                 print("Not a valid number. Please try again.")
 
         calculate(user_operator, num_1, num_2)
 
         user_calc = input("Would you like to make another calculation (Y/N)? ")
+        while True:
+            if user_calc == "Y" or user_calc == "N":
+                break
+            else:
+                user_calc = input("Please enter Y/N: ")
 
     print("Thank you for using Joanne Calculator! See you next time!")
 
